@@ -66,6 +66,39 @@ header {
   color: white;
 }
 
+/* Enlarges disc icon on save button on hover */
+ .saveBtn i.hover {
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+} 
+
+.input-group-text{
+  width: 4rem;
+}
+/* Media Queries */
+@media (max-width: 768px) {
+
+  header {
+    padding: 10px; /* Adjusted padding for smaller screens */
+  }
+
+ /*  .time-block {
+    margin-bottom: 5px; /* Adjusted margin for smaller screens 
+  } */
+
+ 
+  .time-block {
+    display: flex;
+    margin-bottom: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .row {
+    height: auto; /* Adjusted height for smaller screens */
+  }
+}
+
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
