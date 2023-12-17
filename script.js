@@ -1,17 +1,6 @@
-//Display the current day at the top of the calendar 
-//when a user opens the planner.
-
-//Present timeblocks for standard business hours when the user scrolls down.
-
-//Color-code each timeblock based on past, present, and future when the timeblock is viewed.
-
-//Allow a user to enter an event when they click a timeblock.
-
-//Save the event in local storage when the save button is clicked in that timeblock.
-
-//Persist events between refreshes of a page.
 $(document).ready(function () {
-    // Display current day at the top of the page
+    //Display the current day at the top of the calendar 
+    //when a user opens the planner.
     $("#currentDay").text(dayjs().format("dddd, MMMM D"));
   
     // Function to save input to local storage
@@ -23,7 +12,7 @@ $(document).ready(function () {
     function loadFromLocalStorage(hour) {
       return localStorage.getItem(hour);
     }
-  
+  //Present timeblocks for standard business hours when the user scrolls down.
     // Generate time blocks dynamically
     function generateTimeBlocks() {
       var container = $(".container");
@@ -38,7 +27,8 @@ $(document).ready(function () {
           .addClass("col-1 hour")
           .text(dayjs().hour(hour).format("hA"));
         timeBlock.append(hourLabel);
-  
+
+        //Allow a user to enter an event when they click a timeblock.
         // Add textarea for user input
         var textArea = $("<textarea>")
           .addClass("col-9 description")
@@ -51,7 +41,8 @@ $(document).ready(function () {
           .addClass("col-2 saveBtn")
           .html('<i class="fas fa-save"></i>');
         timeBlock.append(saveButton);
-  
+
+        //Color-code each timeblock based on past, present, and future when the timeblock is viewed.
         // Apply past, present, or future class based on the current time
         if (hour < currentTime) {
           timeBlock.addClass("past");
@@ -67,13 +58,14 @@ $(document).ready(function () {
   
     // Call the function to generate time blocks
     generateTimeBlocks();
-  
+
+  //Save the event in local storage when the save button is clicked in that timeblock.
     // Save button click event
     $(".saveBtn").on("click", function () {
       var hour = $(this).siblings(".description").data("hour");
       var text = $(this).siblings(".description").val();
   
-      saveToLocalStorage(hour, text);
+      saveToLocalStorage(hour, text); // save yo local storage
     });
   });
   
