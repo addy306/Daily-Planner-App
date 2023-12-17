@@ -44,17 +44,17 @@ header {
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: #e7d1ff;
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: #98f0ff;
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: #ff98a3;
   color: white;
 }
 
