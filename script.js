@@ -42,14 +42,23 @@ $(document).ready(function () {
           .html('<i class="fas fa-save"></i>');
         timeBlock.append(saveButton);
 
+         // Add save button
+         var deleteButton = $("<button>")
+         .addClass("col-2 deleteBtn")
+         .html('<i class="fas fa-trash-alt"></i>');
+       timeBlock.append(deleteButton);
+
         //Color-code each timeblock based on past, present, and future when the timeblock is viewed.
         // Apply past, present, or future class based on the current time
         if (hour < currentTime) {
-          timeBlock.addClass("past");
+          //timeBlock.addClass("past");
+          hourLabel.addClass("past");
         } else if (hour === currentTime) {
-          timeBlock.addClass("present");
+          //timeBlock.addClass("present");
+          hourLabel.addClass("present");
         } else {
-          timeBlock.addClass("future");
+          //timeBlock.addClass("future");
+          hourLabel.addClass("future");
         }
   
         container.append(timeBlock);
@@ -65,7 +74,14 @@ $(document).ready(function () {
       var hour = $(this).siblings(".description").data("hour");
       var text = $(this).siblings(".description").val();
   
-      saveToLocalStorage(hour, text); // save yo local storage
+      saveToLocalStorage(hour, text); // save to local storage
     });
+//delete button function
+    $(".deleteBtn").on("click", function () {
+        var hour = $(this).siblings(".description").data("hour");
+        var text = $(this).siblings(".description").val("");
+    
+        saveToLocalStorage(hour, text); // save to local storage
+      });
   });
   

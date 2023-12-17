@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  background-color: #c4e2ba;
 }
 
 textarea {
@@ -40,11 +41,11 @@ header {
 .hour {
   background-color: #ffffff;
   color: #000000;
-  border-top: 1px dashed #000000;
+  border-top: 1px dashed #ffffff;
 }
 
 .past {
-  background-color: #e7d1ff;
+  background-color: #ff98a3;
   color: white;
 }
 
@@ -54,20 +55,26 @@ header {
 }
 
 .future {
-  background-color: #ff98a3;
+  background-color:  #00ff00;
   color: white;
 }
 
-.saveBtn {
-  border-left: 1px solid black;
+.saveBtn,.deleteBtn {
+  border-left: 1px solid white;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06aed5;
+  background-color: #98b1ff;
   color: white;
+  height:80px;
+    width:80px;
+}
+.saveBtn:hover,.deleteBtn:hover {
+background-color: #e8e6af;
 }
 
+
 /* Enlarges disc icon on save button on hover */
- .saveBtn i.hover {
+ .saveBtn,.deleteBtn i.hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 } 
@@ -82,11 +89,6 @@ header {
     padding: 10px; /* Adjusted padding for smaller screens */
   }
 
- /*  .time-block {
-    margin-bottom: 5px; /* Adjusted margin for smaller screens 
-  } */
-
- 
   .time-block {
     display: flex;
     margin-bottom: 5px;
@@ -99,7 +101,4 @@ header {
   }
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
-  transition: all 0.3s ease-in-out;
-}
+
