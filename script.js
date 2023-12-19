@@ -1,8 +1,12 @@
 $(document).ready(function () {
     //Display the current day at the top of the calendar 
     //when a user opens the planner.
-    $("#currentDay").text(dayjs().format("dddd, MMMM D"));
-  
+    var timeDisplayEl = $('#time-display');
+  // handle displaying the time
+function displayTime() {
+    var rightNow = dayjs().format('DD MMM YYYY [at] hh:mm:ss a');
+    timeDisplayEl.text(rightNow);
+  }
     // Function to save input to local storage
     function saveToLocalStorage(hour, text) {
       localStorage.setItem(hour, text);
@@ -24,7 +28,7 @@ $(document).ready(function () {
   
         // Add hour label
         var hourLabel = $("<div>")
-          .addClass("col-1 hour")
+          .addClass("col-2 hour")
           .text(dayjs().hour(hour).format("hA"));
         timeBlock.append(hourLabel);
 
@@ -38,27 +42,21 @@ $(document).ready(function () {
   
         // Add save button
         var saveButton = $("<button>")
-          .addClass("col-2 saveBtn")
+          .addClass("col-1 saveBtn")
           .html('<i class="fas fa-save"></i>');
         timeBlock.append(saveButton);
-
-         // Add save button
-         var deleteButton = $("<button>")
-         .addClass("col-2 deleteBtn")
-         .html('<i class="fas fa-trash-alt"></i>');
-       timeBlock.append(deleteButton);
 
         //Color-code each timeblock based on past, present, and future when the timeblock is viewed.
         // Apply past, present, or future class based on the current time
         if (hour < currentTime) {
-          //timeBlock.addClass("past");
-          hourLabel.addClass("past");
+            hourLabel .addClass("past");
+            //saveButton .addClass("past");
         } else if (hour === currentTime) {
-          //timeBlock.addClass("present");
-          hourLabel.addClass("present");
+            hourLabel.addClass("present");
+            //saveButton .addClass("present");
         } else {
-          //timeBlock.addClass("future");
-          hourLabel.addClass("future");
+            hourLabel.addClass("future");
+            //saveButton.addClass("future");
         }
   
         container.append(timeBlock);
@@ -76,12 +74,6 @@ $(document).ready(function () {
   
       saveToLocalStorage(hour, text); // save to local storage
     });
-//delete button function
-    $(".deleteBtn").on("click", function () {
-        var hour = $(this).siblings(".description").data("hour");
-        var text = $(this).siblings(".description").val("");
-    
-        saveToLocalStorage(hour, text); // save to local storage
-      });
+    displayTime()
   });
   

@@ -1,3 +1,4 @@
+/* Creating styles for body */
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -5,15 +6,17 @@ body {
   background-color: #c4e2ba;
 }
 
+/* Creating styles for textarea class */
 textarea {
   background: transparent;
   border: none;
   resize: none;
   color: #000000;
-  border-left: 1px solid black;
+  border-left: 1px solid white;
   padding: 10px;
 }
 
+/* Creating styles for header */
 header {
   text-align: center;
   background-color: transparent;
@@ -23,58 +26,69 @@ header {
   padding: 60px;
 }
 
+/* Creating styles for description class */
 .description {
   white-space: pre-wrap;
 }
 
+/* Creating styles for time-block class */
 .time-block {
   text-align: center;
   border-radius: 15px;
 }
 
+/* Creating styles for row class */
 .row {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
 }
 
+/* Creating styles for hour class */
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #ffffff;
+  padding-top: 20px;
+  text-align: right;
 }
-
+/* Creating styles for past class */
 .past {
   background-color: #ff98a3;
   color: white;
 }
 
+/* Creating styles for present class */
 .present {
   background-color: #98f0ff;
   color: white;
 }
 
+/* Creating styles for future class */
 .future {
-  background-color:  #00ff00;
+  background-color:  #6fc276;
   color: white;
 }
 
-.saveBtn,.deleteBtn {
+/* Creating styles for save button */
+.saveBtn {
   border-left: 1px solid white;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  border-color: #ffffff;
   background-color: #98b1ff;
   color: white;
-  height:80px;
-    width:80px;
+  
 }
-.saveBtn:hover,.deleteBtn:hover {
+
+/* Creating styles for save button hover*/
+.saveBtn:hover {
 background-color: #e8e6af;
 }
 
 
 /* Enlarges disc icon on save button on hover */
- .saveBtn,.deleteBtn i.hover {
+ .saveBtn i.hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 } 
@@ -82,23 +96,3 @@ background-color: #e8e6af;
 .input-group-text{
   width: 4rem;
 }
-/* Media Queries */
-@media (max-width: 768px) {
-
-  header {
-    padding: 10px; /* Adjusted padding for smaller screens */
-  }
-
-  .time-block {
-    display: flex;
-    margin-bottom: 5px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .row {
-    height: auto; /* Adjusted height for smaller screens */
-  }
-}
-
-
