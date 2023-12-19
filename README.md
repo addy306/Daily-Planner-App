@@ -24,8 +24,29 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+This browser app is built for an employee with a busy schedule. It enables them to add important events to a daily planner, in order to manage their time effectively
+.See Demo below 
 
-This is my student front end developer webpage with various sections. It showcases my bootcamp portfolio, my skills, about me section, contact me section and a footer with Nav bar.See below 
+## Webpage Features
+
+### The following animation demonstrates the application functionality:
+
+![A user clicks on slots on the color-coded calendar and edits the events.](./images/daily-schedule-planner-demo.gif)
+
+### images
+![Image of current date and time along with some timelines](./images/daily-planner-1.JPG)
+#### image 1
+
+![Image showing the rest of the ntimelines and the colours](./images/daily-planner-2.JPG)
+#### image 2
+
+* pastel pink : represents the past events
+* pastel blue : represents the present events
+* pastel blue : represents the future events
+
+Allows user to safe their schedule
+
+
 
 ### Built With
 
@@ -36,13 +57,6 @@ This is my student front end developer webpage with various sections. It showcas
 * Javascript
 * JQuery
 * Day.js
-
-
-## Webpage Features
-
-### Navbar and Banner
-![Screenshot of Webpage](./images/bootstrap-portfolio.jpg)
-
 
 
 <!-- LICENSE -->
